@@ -1,0 +1,4 @@
+I google how below code loads the resource Abc.class.getClassLoader().getResourceAsStream("abc.txt") and find that it searchs the resource in all jar file and zip file in class path.
+Thats correct when you work only with a single ClassLoader (most non-OSGi/ non-modular environments). Then all content of all JARs can be seen as one big tree, where classes and resources of JARs, which occur prior in the class path, win over those of JARS, which occur further behind.
+
+But when i tried it I am not able to loads it but if i give package path then I am able to loads it can someone tell me how getResourceAsStream search the class path
