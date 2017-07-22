@@ -1,9 +1,6 @@
 package com.javarush.task.task39.task3913;
 
-import com.javarush.task.task39.task3913.query.DateQuery;
-import com.javarush.task.task39.task3913.query.EventQuery;
-import com.javarush.task.task39.task3913.query.IPQuery;
-import com.javarush.task.task39.task3913.query.UserQuery;
+import com.javarush.task.task39.task3913.query.*;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -11,8 +8,10 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
+public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery, QLQuery {
     List<LogRecord> logLines = null;
 
     public LogParser(Path logDir) {
@@ -252,7 +251,76 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
         return getTaskNumber(Event.DONE_TASK, after, before);
     }
 
+    // ~~~~~~~~~~~~~~~~~~~~ QLQuery implementation ~~~~~~~~~~~~~~~~~~~~
+    @Override
+    public Set<Object> execute(String query) {
+        Set<Object> output = new HashSet<>();
+        String field1 = null;
+        String field2 = null;
+        String value1 = null;
+        String after = null;
+        String before = null;
+
+        // read fields
+        Pattern pattern = Pattern.compile("get (ip|user|date|event|status)"
+                + "( for (ip|user|date|event|status) = \"(.+?)\")?"
+                + "( and date between \"(.+?)\" and \"(.+?)\")?");
+        Matcher matcher = pattern.matcher(query);
+        if (matcher.find()) {
+            field1 = matcher.group(1);
+            field2 = matcher.group(3);
+            value1 = matcher.group(4);
+            after = matcher.group(6);
+            before = matcher.group(7);
+        }
+
+        // Loop the log and populate the appropriate Set
+        for (LogRecord log : logLines) {
+            if (matchFound(log, field2, value1, after, before)) {
+                switch (field1) {
+                    case "ip":      output.add(log.getIp());        break;
+                    case "user":    output.add(log.getUser());      break;
+                    case "date":    output.add(log.getDate());      break;
+                    case "event":   output.add(log.getEvent());     break;
+                    case "status":  output.add(log.getStatus());    break;
+                }
+            }
+        }
+
+        return output;
+    }
+
     // ~~~~~~~~~~~~~~~~~~~~ Private class methods ~~~~~~~~~~~~~~~~~~~~
+    // Check if value for field matches the log line
+    private boolean matchFound(LogRecord logRecord, String field, String value, String sAfter, String sBefore)  {
+        boolean result = false;
+        Date after = null;
+        Date before = null;
+        Date dateLog = null;
+        DateFormat dateFormat = new SimpleDateFormat("d.M.yyyy H:m:s");
+
+        // Parse dates from strings
+        try { dateLog = dateFormat.parse(value);    } catch (ParseException | NullPointerException e) { }
+        try { after = dateFormat.parse(sAfter);     } catch (ParseException | NullPointerException e) { }
+        try { before = dateFormat.parse(sBefore);   } catch (ParseException | NullPointerException e) { }
+
+        // If date inside the dates' range - proceed
+        if (isDateValid(logRecord.getDate(), after, before)) {
+            if (field == null) result = true;
+            else {
+                switch (field) {
+                    case "ip":      result = value.equals(logRecord.getIp());                       break;
+                    case "user":    result = value.equals(logRecord.getUser());                     break;
+                    case "event":   result = Event.valueOf(value).equals(logRecord.getEvent());     break;
+                    case "status":  result = Status.valueOf(value).equals(logRecord.getStatus());   break;
+                    case "date":    result = logRecord.getDate().equals(dateLog);                   break;
+                }
+            }
+        }
+
+        return result;
+    }
+
     // Get set of unique IPs by object (user, status, event or null)
     private Set<String> getIpSet(Object record, Date after, Date before) {
         Set<String> outIp = new HashSet<>();
@@ -437,8 +505,9 @@ public class LogParser implements IPQuery, UserQuery, DateQuery, EventQuery {
     private boolean isDateValid(Date inDate, Date after, Date before) {
         boolean result = true;
 
-        if      (after != null  && (inDate.getTime() < after.getTime()))    { result =  false; }
-        else if (before != null && (inDate.getTime() > before.getTime()))   { result =  false; }
+        // task 7 and on - change the condition form < and > to <= and >=
+        if      (after != null  && (inDate.getTime() <= after.getTime()))    { result =  false; }
+        else if (before != null && (inDate.getTime() >= before.getTime()))   { result =  false; }
 
         return result;
     }

@@ -32,5 +32,14 @@ public class Solution {
         System.out.println("count task attemts to solve: " + logParser.getNumberOfAttemptToSolveTask(18,null, null));
         System.out.println("count successful task attemts to solve: " + logParser.getNumberOfSuccessfulAttemptToSolveTask(18,null, null));
         System.out.println("get solved map: " + logParser.getAllSolvedTasksAndTheirNumber(null, null));
+        System.out.println(" ===== QLQuery =====");
+        System.out.println("query - get ip: " + logParser.execute("get ip"));
+        System.out.println("query - get user: " + logParser.execute("get user"));
+        System.out.println("query - get date: " + logParser.execute("get date"));
+        System.out.println("query - get event: " + logParser.execute("get event"));
+        System.out.println("query - get status: " + logParser.execute("get status"));
+        System.out.println("query - get ips for event: " + logParser.execute("get ip for event = \"DONE_TASK\""));
+        System.out.println("query - get ips for user between dates: " + logParser.execute("get ip for user = \"Eduard Petrovich Morozko\" and date between \"11.12.2013 0:00:00\" and \"03.01.2014 23:59:59\""));
+        System.out.println("query - get ips for event: " + logParser.execute("get ip for event = \"LOGIN\" and date between \"11.12.2011 0:00:00\" and \"03.01.2016 23:59:59\""));
     }
 }
