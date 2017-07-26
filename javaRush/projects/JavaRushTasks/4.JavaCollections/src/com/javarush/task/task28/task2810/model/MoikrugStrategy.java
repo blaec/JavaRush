@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HHStrategy implements Strategy {
-    private static final String URL_FORMAT = "http://hh.ua/search/vacancy?text=java+%s&page=%d";
+public class MoikrugStrategy implements Strategy {
+    private static final String URL_FORMAT = "https://moikrug.ru/vacancies?q=java+%s";
     //
 
     @Override

@@ -1,19 +1,20 @@
 package com.javarush.task.task28.task2810;
 
+import com.javarush.task.task28.task2810.model.HHStrategy;
+import com.javarush.task.task28.task2810.model.Model;
+import com.javarush.task.task28.task2810.model.MoikrugStrategy;
 import com.javarush.task.task28.task2810.model.Provider;
-import com.javarush.task.task28.task2810.model.Strategy;
+import com.javarush.task.task28.task2810.view.HtmlView;
 
 public class Aggregator {
     public static void main(String[] args) {
-        Strategy strategy = new Strategy() {
-            @Override
-            public int hashCode() {
-                return super.hashCode();
-            }
-        };
-        Provider provider = new Provider(strategy);
-        Controller controller = new Controller(provider);
+        HtmlView view = new HtmlView();
+        Provider providerHH = new Provider(new HHStrategy());
+        Provider providerMine = new Provider(new MoikrugStrategy());
+        Model model = new Model(view, providerHH, providerMine);
+        Controller controller = new Controller(model);
 
-        System.out.println(controller);
+        view.setController(controller);
+        view.userCitySelectEmulationMethod();
     }
 }
