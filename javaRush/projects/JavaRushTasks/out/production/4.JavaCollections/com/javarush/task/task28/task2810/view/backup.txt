@@ -74,7 +74,7 @@ public class HtmlView implements View {
     }
 
     public void userCitySelectEmulationMethod() {
-        controller.onCitySelect("Dnepropetrovsk");
+        controller.onCitySelect("Kiev");
     }
 
     protected Document getDocument() throws IOException
