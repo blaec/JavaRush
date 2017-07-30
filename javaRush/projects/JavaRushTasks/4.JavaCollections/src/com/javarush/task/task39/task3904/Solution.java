@@ -12,15 +12,8 @@ public class Solution {
     }
 
     public static long countPossibleRunups(int n) {
-        long result = 0;
 
-        if (n < 0)          result = 0;
-        else if (n == 0 )   result = 1;
-        else {
-
-        }
-
-        return result;
+        return 0;
     }
 }
 
