@@ -52,4 +52,22 @@ public class ConsoleHelper {
 
         return input;
     }
+
+    public static Operation askOperation() throws IOException {
+        Operation operation = null;
+
+        while (true) {
+            writeMessage("Choose operation: 1-Info, 2-Deposit, 3-Withdraw, 4-Exit: ");
+            String option = readString();
+
+            // Validation
+            boolean correct = true;
+            try {
+                operation = Operation.getAllowableOperationByOrdinal(Integer.parseInt(option));
+            } catch (Exception e) { correct = false; }
+            if (correct) break;
+        }
+
+        return operation;
+    }
 }

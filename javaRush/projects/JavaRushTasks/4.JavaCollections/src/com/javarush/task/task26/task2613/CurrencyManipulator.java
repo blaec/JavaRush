@@ -1,6 +1,7 @@
 package com.javarush.task.task26.task2613;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /*
@@ -30,6 +31,14 @@ public class CurrencyManipulator {
     }
 
     public int getTotalAmount() {
-        return 0;
+        int total = 0;
+
+        Iterator it = denominations.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            total += (int)(pair.getKey()) * (int)(pair.getValue());
+        }
+
+        return total;
     }
 }
