@@ -1,5 +1,7 @@
 package com.javarush.task.task26.task2613;
 
+import com.javarush.task.task26.task2613.exception.InterruptOperationException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,11 +13,21 @@ public class ConsoleHelper {
         System.out.print(message);
     }
 
-    public static String readString() throws IOException {
-        return bis.readLine();
+    public static String readString() throws InterruptOperationException {
+        String line = "";
+
+        try {
+            line = bis.readLine();
+            if (line.equalsIgnoreCase("exit")) {
+                throw new InterruptOperationException();
+            }
+        } catch (IOException e) { }
+
+
+        return line;
     }
 
-    public static String askCurrencyCode() throws IOException {
+    public static String askCurrencyCode() throws InterruptOperationException {
         String code = null;
 
         while (true) {
@@ -30,7 +42,7 @@ public class ConsoleHelper {
         return code.toUpperCase();
     }
 
-    public static String[] getValidTwoDigits(String currencyCode) throws IOException {
+    public static String[] getValidTwoDigits(String currencyCode) throws InterruptOperationException {
         String[] input;
 
         while (true) {
@@ -53,7 +65,7 @@ public class ConsoleHelper {
         return input;
     }
 
-    public static Operation askOperation() throws IOException {
+    public static Operation askOperation() throws InterruptOperationException {
         Operation operation = null;
 
         while (true) {

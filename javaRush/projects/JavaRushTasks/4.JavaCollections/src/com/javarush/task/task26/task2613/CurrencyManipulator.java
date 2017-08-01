@@ -1,8 +1,9 @@
 package com.javarush.task.task26.task2613;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import com.javarush.task.task26.task2613.exception.NotEnoughMoneyException;
+import org.omg.CORBA.INTERNAL;
+
+import java.util.*;
 
 /*
     String currencyCode                 — код валюты, например, USD. Состоит из трех букв.
@@ -40,5 +41,41 @@ public class CurrencyManipulator {
         }
 
         return total;
+    }
+
+    public boolean isAmountAvailable(int expectedAmount) {
+        return expectedAmount >= getTotalAmount();
+    }
+
+    public boolean hasMoney() {
+        return denominations.size() != 0;
+    }
+
+    public Map<Integer, Integer> withdrawAmount(int expectedAmount) throws NotEnoughMoneyException {
+        Map<Integer, Integer> output = new HashMap<>();
+
+        // sort the denominators
+        Map<Integer, Integer> sorted = new TreeMap<>(Collections.reverseOrder());
+        sorted.putAll(denominations);
+
+        // try to withdraw
+        Iterator it = sorted.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            int key = (int)pair.getKey();
+            int value = (int)pair.getValue();
+
+            if (expectedAmount >= key) {
+                int count = expectedAmount/key;
+                count = Math.min(count, value);
+                expectedAmount -= count * key;
+                output.put(key, count);
+            }
+        }
+
+        // if failed to withdraw exact expected amount - raise error
+        if (expectedAmount > 0)throw new NotEnoughMoneyException();
+
+        return output;
     }
 }
