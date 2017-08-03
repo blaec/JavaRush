@@ -35,8 +35,12 @@ public class ConsoleHelper {
             code = readString();
 
             // Validation
-            if (code.length() == 3)     break;
-            else                        writeMessage("Incorrect entry. ");
+            if (code.length() == 3 && !code.matches(".*\\d+.*")) {
+                break;
+            }
+            else {
+                writeMessage("Incorrect entry. ");
+            }
         }
 
         return code.toUpperCase();

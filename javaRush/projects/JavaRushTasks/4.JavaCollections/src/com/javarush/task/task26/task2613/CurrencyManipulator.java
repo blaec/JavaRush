@@ -1,7 +1,6 @@
 package com.javarush.task.task26.task2613;
 
 import com.javarush.task.task26.task2613.exception.NotEnoughMoneyException;
-import org.omg.CORBA.INTERNAL;
 
 import java.util.*;
 
@@ -44,7 +43,7 @@ public class CurrencyManipulator {
     }
 
     public boolean isAmountAvailable(int expectedAmount) {
-        return expectedAmount >= getTotalAmount();
+        return expectedAmount <= getTotalAmount();
     }
 
     public boolean hasMoney() {
@@ -52,13 +51,14 @@ public class CurrencyManipulator {
     }
 
     public Map<Integer, Integer> withdrawAmount(int expectedAmount) throws NotEnoughMoneyException {
-        Map<Integer, Integer> output = new HashMap<>();
+        Map<Integer, Integer> output = new LinkedHashMap<>();
 
         // sort the denominators
         Map<Integer, Integer> sorted = new TreeMap<>(Collections.reverseOrder());
         sorted.putAll(denominations);
 
-        // try to withdraw
+        // try to get amount to withdraw
+        // if hava 50x50 + 30x30, can't withdraw 120 (30x4), tries 50x2 + 20x1 and fails
         Iterator it = sorted.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
@@ -75,6 +75,18 @@ public class CurrencyManipulator {
 
         // if failed to withdraw exact expected amount - raise error
         if (expectedAmount > 0)throw new NotEnoughMoneyException();
+
+        // withdraw money
+        it = output.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            int key = (int)pair.getKey();
+            int value = (int)pair.getValue();
+            int newValue = denominations.get(key) - value;
+
+            denominations.remove(key);
+            denominations.put(key, newValue);
+        }
 
         return output;
     }

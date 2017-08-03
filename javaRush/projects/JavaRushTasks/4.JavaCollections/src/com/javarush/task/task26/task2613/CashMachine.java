@@ -1,8 +1,8 @@
 package com.javarush.task.task26.task2613;
 
 /*
-    writeMessage(String message),   который будет писать в консоль наше сообщение.
-    String readString(),            который будет считывать с консоли строку и возвращать ее.
+    writeMessage(String message),   write message to console
+    String readString(),            read and return string from console
  */
 
 import com.javarush.task.task26.task2613.command.CommandExecutor;

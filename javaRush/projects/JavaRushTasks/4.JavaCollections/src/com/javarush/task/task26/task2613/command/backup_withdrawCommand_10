@@ -1,0 +1,44 @@
+// passes validation
+class WithdrawCommand implements Command
+{
+    @Override
+    public void execute() throws InterruptOperationException
+    {
+        String currencyCode = ConsoleHelper.askCurrencyCode();
+        CurrencyManipulator currencyManipulator = CurrencyManipulatorFactory.getManipulatorByCurrencyCode(currencyCode);
+        Map<Integer, Integer> withdraw = null;
+        while (true){
+            ConsoleHelper.writeMessage("Введите требуемую сумму");
+            String neededSumString = ConsoleHelper.readString();
+            int neededSum = 0;
+            try
+            {
+                neededSum = Integer.parseInt(neededSumString);
+            }
+            catch (RuntimeException e){
+                ConsoleHelper.writeMessage("Введены некорректные даные");
+                continue;
+            }
+            if (!currencyManipulator.isAmountAvailable(neededSum)){
+                ConsoleHelper.writeMessage("На счете недостаточно денег");
+                continue;
+            }
+            try
+            {
+                withdraw = currencyManipulator.withdrawAmount(neededSum);
+            }
+            catch (NotEnoughMoneyException e)
+            {
+                //e.printStackTrace();
+                ConsoleHelper.writeMessage("Нет нужного набора банкнот");
+                continue;
+            }
+            break;
+        }
+        for (Map.Entry<Integer,Integer> pair: withdraw.entrySet()){
+            if (pair.getValue()==0) continue;
+            ConsoleHelper.writeMessage("\t"+pair.getKey()+" - "+pair.getValue());
+        }
+        ConsoleHelper.writeMessage("Транзакция завершилась успешно");
+    }
+}

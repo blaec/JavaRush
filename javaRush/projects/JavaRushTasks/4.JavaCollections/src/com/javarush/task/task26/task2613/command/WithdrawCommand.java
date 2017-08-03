@@ -14,30 +14,23 @@ class WithdrawCommand implements Command {
     public void execute() throws InterruptOperationException, NotEnoughMoneyException {
 
         // read currency code and get its manipulator
-        CurrencyManipulator currencyManipulator = null;
-        while (currencyManipulator == null) {
-            String code = ConsoleHelper.askCurrencyCode();
-            currencyManipulator = CurrencyManipulatorFactory.getManipulatorByCurrencyCode(code);
-        }
+        String code = ConsoleHelper.askCurrencyCode();
+        CurrencyManipulator currencyManipulator = CurrencyManipulatorFactory.getManipulatorByCurrencyCode(code);
+        int amount = 0;
 
-
-        boolean enoughMoney = false;
-        while (!enoughMoney) {
-
-            // ask sum to withdraw, check if entered sum correct and available
-            ConsoleHelper.writeMessage("Enter the sum to withdraw: ");
-            int sum = 0;
-            boolean sumWrong = true;
-            while (sumWrong && !currencyManipulator.isAmountAvailable(sum)) {
-                try {
-                    sum = Integer.parseInt(ConsoleHelper.readString());
-                    sumWrong = false;
-                } catch (Exception e) { sumWrong = true; }
-            }
-
-            // display output
+        while (true) {
             try {
-                Iterator it = currencyManipulator.withdrawAmount(sum).entrySet().iterator();
+
+                // ask amount to withdraw, check if entered sum correct and available
+                ConsoleHelper.writeMessage("Enter the sum to withdraw: ");
+
+                amount = Integer.parseInt(ConsoleHelper.readString());
+                if (amount <= 0) throw new NumberFormatException();
+                if (!currencyManipulator.isAmountAvailable(amount))
+                    throw new NotEnoughMoneyException();
+
+                Map<Integer, Integer> withdrawn = currencyManipulator.withdrawAmount(amount);
+                Iterator it = withdrawn.entrySet().iterator();
                 while (it.hasNext()) {
                     Map.Entry pair = (Map.Entry) it.next();
                     int key = (int) pair.getKey();
@@ -46,9 +39,10 @@ class WithdrawCommand implements Command {
                     ConsoleHelper.writeMessage("\t" + key + " - " + value + "\n");
                 }
                 ConsoleHelper.writeMessage("Withdrawal successful\n");
-                enoughMoney = true;
-            } catch (NotEnoughMoneyException e) { enoughMoney = false; }
+                break;
+            } catch (NumberFormatException e)   { ConsoleHelper.writeMessage("Incorrect entry. ");
+            } catch (NotEnoughMoneyException e) { ConsoleHelper.writeMessage("Not enough banknotes. ");
+            }
         }
-
     }
 }
