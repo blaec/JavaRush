@@ -10,7 +10,7 @@ public class ConsoleHelper {
     private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message) {
-        System.out.print(message);
+        System.out.println(message);
     }
 
     public static String readString() throws InterruptOperationException {
