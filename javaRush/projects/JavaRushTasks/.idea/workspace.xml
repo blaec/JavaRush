@@ -20,26 +20,12 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="6">
+    <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4001/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4002/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
+          <leaf>
             <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4011/Условие.jrtc">
+              <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4003/Условие.jrtc">
                 <provider selected="true" editor-type-id="EditorTypeId">
                   <state />
                 </provider>
@@ -56,17 +42,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4011/Solution.java">
+        <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4004/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Валидация" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/Валидация">
+      <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4004/Условие.jrtc">
           <provider selected="true" editor-type-id="EditorTypeId">
             <state />
           </provider>
@@ -134,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3901/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3902/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3903/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3905/PhotoPaint.java" />
@@ -185,6 +170,7 @@
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4002/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4010/Solution.java" />
         <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4011/Solution.java" />
+        <option value="$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4003/Solution.java" />
       </list>
     </option>
   </component>
@@ -195,9 +181,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1926" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -271,33 +258,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="task" type="462c0819:PsiDirectoryNode" />
               <item name="task40" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaRushTasks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaRushTasks" type="462c0819:PsiDirectoryNode" />
-              <item name="4.JavaCollections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="task40" type="462c0819:PsiDirectoryNode" />
-              <item name="task4001" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaRushTasks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaRushTasks" type="462c0819:PsiDirectoryNode" />
-              <item name="4.JavaCollections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="task40" type="462c0819:PsiDirectoryNode" />
-              <item name="task4010" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaRushTasks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaRushTasks" type="462c0819:PsiDirectoryNode" />
-              <item name="4.JavaCollections" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="task" type="462c0819:PsiDirectoryNode" />
-              <item name="task40" type="462c0819:PsiDirectoryNode" />
-              <item name="task4011" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JavaRushTasks" type="b2602c69:ProjectViewProjectNode" />
@@ -1022,32 +982,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3910/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3911/Условие.jrtc">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3911/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="45" lean-forward="false" selection-start-line="23" selection-start-column="45" selection-end-line="23" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task39/task3911/Software.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
@@ -1333,7 +1267,7 @@
         <state relative-caret-position="357">
           <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1343,14 +1277,9 @@
         <state relative-caret-position="51">
           <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Валидация">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4011/Условие.jrtc">
@@ -1360,8 +1289,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4011/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+        <state relative-caret-position="493">
+          <caret line="29" column="45" lean-forward="true" selection-start-line="29" selection-start-column="45" selection-end-line="29" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4003/Условие.jrtc">
+      <provider selected="true" editor-type-id="EditorTypeId">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Валидация">
+      <provider selected="true" editor-type-id="EditorTypeId">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4003/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="58" column="29" lean-forward="true" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4004/Условие.jrtc">
+      <provider selected="true" editor-type-id="EditorTypeId">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4.JavaCollections/src/com/javarush/task/task40/task4004/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1444,7 +1406,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>com.fasterxml.jackson.core:jackson-annotations:2.8.0.rc2</last-edited>
+          <last-edited>javax.mail:mail:1.4.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
