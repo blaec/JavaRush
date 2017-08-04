@@ -15,7 +15,7 @@ public class CashMachine {
     public static void main(String[] args)  {
         try {
             Locale.setDefault(Locale.ENGLISH);
-
+            CommandExecutor.execute(Operation.LOGIN);
 
             while (true) {
                 Operation operation = ConsoleHelper.askOperation();
