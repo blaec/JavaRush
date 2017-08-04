@@ -12,6 +12,8 @@ import com.javarush.task.task26.task2613.exception.NotEnoughMoneyException;
 import java.util.Locale;
 
 public class CashMachine {
+    public static final String RESOURCE_PATH = CashMachine.class.getPackage().getName() + ".resources.";
+
     public static void main(String[] args)  {
         try {
             Locale.setDefault(Locale.ENGLISH);
@@ -24,7 +26,7 @@ public class CashMachine {
                 if (operation == Operation.EXIT) break;
             }
         } catch (InterruptOperationException e) {
-            ConsoleHelper.writeMessage("G'bye");
+            ConsoleHelper.printExitMessage();
         } catch (NotEnoughMoneyException e) {
             e.printStackTrace();
         }

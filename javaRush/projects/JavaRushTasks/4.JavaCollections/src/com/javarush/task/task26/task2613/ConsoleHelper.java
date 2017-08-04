@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 
 public class ConsoleHelper {
     private static BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
-    private static ResourceBundle res = ResourceBundle.getBundle(CashMachine.class.getPackage().getName() + ".resources.common_en");
+    private static ResourceBundle res = ResourceBundle.getBundle(CashMachine.RESOURCE_PATH + "common_en");
 
     public static void writeMessage(String message) {
         System.out.println(message);
@@ -91,5 +91,9 @@ public class ConsoleHelper {
         }
 
         return operation;
+    }
+
+    public static void printExitMessage() {
+        writeMessage(res.getString("the.end"));
     }
 }
