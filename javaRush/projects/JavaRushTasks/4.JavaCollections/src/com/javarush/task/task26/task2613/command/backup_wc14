@@ -52,6 +52,7 @@ class WithdrawCommand implements Command {
                     key = (int) pair.getKey();
                     value = (int) pair.getValue();
 
+//                    ConsoleHelper.writeMessage("\t" + key + " - " + value + "\n");
                     ConsoleHelper.writeMessage(String.format(res.getString("success.format"), key * value, code));
                 }
                 break;
