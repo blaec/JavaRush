@@ -6,6 +6,7 @@ import java.util.List;
 /* 
 Принадлежность точки многоугольнику
 http://www.sanfoundry.com/java-program-check-whether-given-point-lies-given-polygon/
+https://habrahabr.ru/post/144571/
 */
 
 class Point {
@@ -60,6 +61,7 @@ public class Solution {
             i = next;
         } while (i != 0);
 
+        // if count number odd - intersects
         return (count & 1) == 1 ? true : false;
     }
 
@@ -72,6 +74,11 @@ public class Solution {
         return false;
     }
 
+    // Check where point r is (on line pq, to the left or to the right)
+    // Vector pq x Vector qr: z = PxQy - PyQx
+    // z > 0 (from the left)
+    // z < 0 (from the right)
+    // z = 0 PQ & QR on the same line
     public static int orientation(Point p, Point q, Point r) {
 
         int val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
