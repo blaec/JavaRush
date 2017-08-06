@@ -1,0 +1,11 @@
+//            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//
+//            connection.setRequestMethod("GET");
+//
+//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+//            String responseLine;
+//
+//            while ((responseLine = bufferedReader.readLine()) != null) {
+//                System.out.println(responseLine);
+//            }
+//            bufferedReader.close();
