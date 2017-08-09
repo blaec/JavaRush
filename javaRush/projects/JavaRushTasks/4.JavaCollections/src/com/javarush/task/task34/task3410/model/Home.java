@@ -11,7 +11,8 @@ public class Home extends GameObject{
 
     @Override
     public void draw(Graphics graphics) {
+        int center = Model.FIELD_CELL_SIZE / 2;
         graphics.setColor(Color.RED);
-        graphics.drawOval(getX(), getY(), getWidth(), getHeight());
+        graphics.drawOval(getX() + center, getY() + center, getWidth(), getHeight());
     }
 }
