@@ -36,4 +36,11 @@ public class View extends JFrame {
     public GameObjects getGameObjects() {
         return controller.getGameObjects();
     }
+
+    // https://alvinalexander.com/java/joptionpane-showmessagedialog-examples-1
+    public void completed(int level) {
+        update();
+        JOptionPane.showMessageDialog(null, String.format("Level %d completed!", level));
+        controller.startNextLevel();
+    }
 }
