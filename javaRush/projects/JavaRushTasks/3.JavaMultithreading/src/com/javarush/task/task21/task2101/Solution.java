@@ -19,11 +19,13 @@ public class Solution {
         for (int i = 0; i < out.length; i++) {
             out[i] = (byte) (ip[i] & mask[i]);
         }
+
         return out;
     }
 
     public static void print(byte[] bytes) {
         StringBuilder sb = new StringBuilder();
+
         for (int i = 0; i < bytes.length; i++) {
             sb.append(new Solution().byteToBinary(bytes[i])).append(" ");
         }
