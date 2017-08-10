@@ -2,7 +2,6 @@ package com.javarush.task.task34.task3410.model;
 
 import com.javarush.task.task34.task3410.controller.EventListener;
 
-import javax.swing.*;
 import java.nio.file.Paths;
 import java.util.Set;
 
@@ -11,7 +10,8 @@ public class Model {
     private EventListener eventListener;
     private GameObjects gameObjects;
     private int currentLevel = 1;
-    private LevelLoader levelLoader = new LevelLoader(Paths.get(Model.class.getPackage().getName() + "res.levels.txt"));
+//    private LevelLoader levelLoader = new LevelLoader(Paths.get(Model.class.getPackage().getName() + ".res.levels.txt"));
+    private LevelLoader levelLoader = new LevelLoader(Paths.get("C:\\Users\\blaec\\Google Drive\\Java\\javaRush\\projects\\JavaRushTasks\\4.JavaCollections\\src\\com\\javarush\\task\\task34\\task3410\\res\\levels.txt"));
 
     public void setEventListener(EventListener eventListener) {
         this.eventListener = eventListener;
