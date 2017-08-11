@@ -19,6 +19,8 @@ public class Hippodrome {
 
         // validator requires set to horses static modifier and initialize it
         game.run();
+        game.getWinner();
+        game.printWinner();
     }
 
     public List<Horse> getHorses() {
@@ -49,5 +51,19 @@ public class Hippodrome {
                 e.printStackTrace();
             }
         }
+    }
+
+    public Horse getWinner() {
+        Horse winner = null;
+        double maxDistance = 0;
+        for (Horse horse : horses) {
+            maxDistance = horse.getDistance() > maxDistance ? horse.getDistance() : maxDistance;
+            if (maxDistance == horse.getDistance()) winner = horse;
+        }
+        return winner;
+    }
+
+    public void printWinner() {
+        System.out.println(String.format("Winner is %s!", getWinner().getName()));
     }
 }
