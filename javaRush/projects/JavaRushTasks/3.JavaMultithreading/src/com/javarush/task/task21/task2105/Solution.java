@@ -14,11 +14,23 @@ public class Solution {
         this.last = last;
     }
 
+    @Override
     public boolean equals(Object o) {
-        if (!(o instanceof Solution))
-            return false;
+        if (o == null)                  return false;
+        if (!(o instanceof Solution))   return false;
+        if (o == this)                  return true;
+
         Solution n = (Solution) o;
-        return n.first.equals(first) && n.last.equals(last);
+        if (n.first != null ? !(n.first.equals(first)) : first != null) return false;
+        if (n.last != null ? !(n.last.equals(last)) : last != null)     return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int firstHash = first == null ? 0 : first.hashCode();
+        int lastHash = last == null ? 0 : last.hashCode();
+        return 31 * firstHash + lastHash;
     }
 
     public static void main(String[] args) {
