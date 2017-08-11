@@ -27,7 +27,14 @@ public class Hippodrome {
             horse.move();
     }
 
-    public void print() {}
+    public void print() {
+        for (Horse horse : horses)
+            horse.print();
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println();
+        }
+    }
 
     public void run() throws InterruptedException {
         for (int i = 0; i < 100; i++) {
