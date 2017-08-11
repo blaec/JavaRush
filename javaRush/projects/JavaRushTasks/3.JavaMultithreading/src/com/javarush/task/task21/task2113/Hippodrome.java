@@ -22,7 +22,11 @@ public class Hippodrome {
         return horses;
     }
 
-    public void move() {}
+    public void move() {
+        for (Horse horse : horses)
+            horse.move();
+    }
+
     public void print() {}
 
     public void run() throws InterruptedException {
