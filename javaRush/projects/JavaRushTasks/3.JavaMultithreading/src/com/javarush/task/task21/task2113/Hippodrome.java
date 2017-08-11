@@ -19,7 +19,6 @@ public class Hippodrome {
 
         // validator requires set to horses static modifier and initialize it
         game.run();
-        game.getWinner();
         game.printWinner();
     }
 
