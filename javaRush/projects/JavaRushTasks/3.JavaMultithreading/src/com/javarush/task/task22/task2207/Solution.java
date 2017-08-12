@@ -11,7 +11,7 @@ public class Solution {
     public static List<Pair> result = new LinkedList<>();
 
     public static void main(String[] args) throws IOException {
-
+// validator does not accepts commented text, although result's the same
 //        // Get path, read file and save all unique words to HashSet
 //        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 //        Scanner in = null;
