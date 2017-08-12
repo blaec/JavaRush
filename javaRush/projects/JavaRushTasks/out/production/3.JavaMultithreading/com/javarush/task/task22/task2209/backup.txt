@@ -1,0 +1,64 @@
+package com.javarush.task.task22.task2209;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+/*
+Составить цепочку слов
+*/
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String filePath = reader.readLine();
+        BufferedReader file = new BufferedReader(new FileReader(filePath));
+        StringBuilder words = new StringBuilder();
+
+        while (file.ready()) {
+            words.append(file.readLine());
+        }
+
+        //...
+        StringBuilder result = getLine(words.toString().split(" "));
+        System.out.println(result.toString());
+    }
+
+    public static StringBuilder getLine(String... words) {
+        StringBuilder sb = null;
+        char lastChar = 0;
+        List<String> list = new ArrayList<>();
+        list.addAll(Arrays.asList(words));
+//        Arrays.sort(words);     // Sorted to match 5th step, although works without sorting
+        int added = 0;
+
+        // because of this condition and shuffling - times out (infinite loop)
+        while (added != words.length) {
+            sb = new StringBuilder();
+            List<String> temp = new ArrayList<>(list);
+            Collections.shuffle(list);
+
+            for (int i = 0; i < temp.size(); i++) {
+                if (sb.length() == 0) {
+                    sb.append(temp.get(i));
+                    lastChar = temp.get(i).charAt(temp.get(i).length() - 1);
+                    temp.remove(i);
+                    added++;
+                } else {
+                    for (int j = 0; j < temp.size(); j++) {
+                        if (temp.get(j).toLowerCase().startsWith(String.valueOf(lastChar).toLowerCase())) {
+                            sb.append(" ").append(temp.get(j));
+                            lastChar = temp.get(j).charAt(temp.get(j).length() - 1);
+                            temp.remove(j);
+                            added++;
+                        }
+                    }
+                }
+            }
+        }
+
+        System.out.println(added);
+        return sb;
+    }
+}
