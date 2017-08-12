@@ -34,6 +34,7 @@ public class Solution {
         int added = 0;
 
         // because of this condition and shuffling - times out (infinite loop)
+        // as an option, add counter to exit this loop, create maxWords string and return it
         while (added != words.length) {
             sb = new StringBuilder();
             List<String> temp = new ArrayList<>(list);
