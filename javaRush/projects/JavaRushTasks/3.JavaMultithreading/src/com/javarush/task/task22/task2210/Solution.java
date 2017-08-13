@@ -21,17 +21,15 @@ public class Solution {
             temp.add(tokenizer.nextToken());
         }
 
-
-
         String[] output = new String[temp.size()];
         return temp.toArray(output);
 
         /*
-        * Better option
+        * Better solution
         * StringTokenizer tokenizer = new StringTokenizer(query, delimiter);
         * String[] output = new String[tokenizer.countTokens()];
         *
-        * for (int i=0; tokenizer.hasMoreElements();i++) {
+        * for (int i=0; tokenizer.hasMoreElements(); i++) {
         *   output[i] = tokenizer.nextToken();
         * }
         *
