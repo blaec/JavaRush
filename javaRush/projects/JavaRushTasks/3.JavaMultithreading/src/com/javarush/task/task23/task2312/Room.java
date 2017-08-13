@@ -49,6 +49,8 @@ public class Room {
 
     public void print() {}
 
+    public void sleep() {}
+
     public void createMouse() {
         int rndX = (int)(Math.random() * getWidth());
         int rndY = (int)(Math.random() * getHeight());
@@ -65,5 +67,7 @@ public class Room {
         Snake snake = new Snake(0,0);
         game = new Room(100, 100, snake);
         snake.setDirection(SnakeDirection.DOWN);
+        game.createMouse();
+        game.run();
     }
 }
