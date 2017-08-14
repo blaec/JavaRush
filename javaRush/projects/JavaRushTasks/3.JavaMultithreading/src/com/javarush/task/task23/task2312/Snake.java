@@ -19,7 +19,18 @@ public class Snake {
         isAlive = true;
     }
 
-    public void move() {}
+    public void move() {
+
+        if (isAlive) {
+            switch (direction) {
+                case UP:    move(0, -1);    break;
+                case RIGHT: move(1, 0);     break;
+                case DOWN:  move(0, 1);     break;
+                case LEFT:  move(-1, 0);    break;
+            }
+        }
+    }
+    public void move(int x, int y) {}
 
     public int getX() {
         return sections.get(0).getX();

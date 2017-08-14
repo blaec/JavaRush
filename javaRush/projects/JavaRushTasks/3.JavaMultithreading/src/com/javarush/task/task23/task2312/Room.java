@@ -2,6 +2,7 @@ package com.javarush.task.task23.task2312;
 
 
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 /**
  * Основной класс программы.
@@ -95,27 +96,31 @@ public class Room {
      */
     public void print() {
         //Создаем массив, куда будем "рисовать" текущее состояние игры
-        int[][] matrix = new int[getHeight()][getWidth()];
+        int[][] matrix = new int[height][width];
 
         //Рисуем все кусочки змеи
-        for (int i = 0; i < snake.getSections().size(); i++) {
-            int x = snake.getSections().get(i).getX();
-            int y = snake.getSections().get(i).getY();
-
-            int section = i == 0 ? 'X' : 'x';
-            matrix[y][x] = section;
+        ArrayList<SnakeSection> sections = new ArrayList<SnakeSection>(snake.getSections());
+        for (SnakeSection snakeSection : sections) {
+            matrix[snakeSection.getY()][snakeSection.getX()] = 1;
         }
 
+        //Рисуем голову змеи (4 - если змея мертвая)
+        matrix[snake.getY()][snake.getX()] = snake.isAlive() ? 2 : 4;
+
         //Рисуем мышь
-        matrix[mouse.getY()][mouse.getX()] = '^';
+        matrix[mouse.getY()][mouse.getX()] = 3;
 
         //Выводим все это на экран
-        for (int h = 0; h < getHeight(); h++) {
-            for (int w = 0; w < getWidth(); w++) {
-                System.out.print((char)(matrix[h][w]));
+        String[] symbols = {" . ", " x ", " X ", "^_^", "RIP"};
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                System.out.print(symbols[matrix[y][x]]);
             }
             System.out.println();
         }
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     /**
@@ -146,17 +151,18 @@ public class Room {
     }
 
 
+    private int initialDelay = 520;
+    private int delayStep = 20;
+
     /**
      * Программа делает паузу, длинна которой зависит от длинны змеи.
      */
     public void sleep() {
-        int snakeLenght = snake.getSections().size();
-        int pause = Math.max(500 - (snakeLenght - 1) * 20, 200);
-
         try {
-            Thread.sleep(pause);
+            int level = snake.getSections().size();
+            int delay = level < 15 ? (initialDelay - delayStep * level) : 200;
+            Thread.sleep(delay);
         } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
