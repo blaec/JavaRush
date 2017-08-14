@@ -1,0 +1,12 @@
+https://blog.jetbrains.com/idea/2010/08/quickly-create-jar-artifact/
+File > Project Structure > Artifacts > JAR > From modules with dependencies...
+Module - select module (quest)
+Main Class - search for Room (com.javarush.task.task23.task2312.Room)
+OK
+Output diretory - select desired folder
+OK
+
+Build > Build artifacts...
+
+Open command line in folder with jar file and type:
+java -jar Snake.jar
