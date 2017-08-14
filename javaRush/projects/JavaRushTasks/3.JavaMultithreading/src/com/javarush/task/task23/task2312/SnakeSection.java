@@ -31,8 +31,10 @@ public class SnakeSection {
         return true;
     }
 
-        @Override
+    @Override
     public int hashCode() {
-        return 31 * x + y;
+        int result = x;
+        result = 31 * result + y;
+        return result;
     }
 }
