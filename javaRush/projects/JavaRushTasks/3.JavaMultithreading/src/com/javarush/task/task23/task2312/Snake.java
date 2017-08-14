@@ -1,5 +1,7 @@
 package com.javarush.task.task23.task2312;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,5 +56,22 @@ public class Snake {
 
     public void setDirection(SnakeDirection direction) {
         this.direction = direction;
+    }
+
+
+    public void checkBorders(SnakeSection head) {
+        int headX = head.getX();
+        int headY = head.getY();
+
+        if (headX < 0 || headY < 0 || headX >= Room.game.getWidth() || headY >= Room.game.getHeight()) {
+            isAlive = false;
+        }
+    }
+
+    public void checkBody(SnakeSection head) {
+        List<SnakeSection> body = new ArrayList<>(sections);
+        body.remove(0);
+
+        if (body.contains(head)) isAlive = false;
     }
 }
