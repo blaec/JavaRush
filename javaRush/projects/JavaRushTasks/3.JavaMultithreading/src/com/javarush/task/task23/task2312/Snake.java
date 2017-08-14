@@ -1,7 +1,5 @@
 package com.javarush.task.task23.task2312;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +30,28 @@ public class Snake {
             }
         }
     }
-    public void move(int x, int y) {}
+    public void move(int dx, int dy) {
+
+        // important sections.get(0).getX()
+        int newX = sections.get(0).getX() + dx;
+        int newY = sections.get(0).getY() + dy;
+        SnakeSection newHead = new SnakeSection(newX, newY);
+        checkBorders(newHead);
+        checkBody(newHead);
+
+        if (isAlive) {
+            sections.add(0, newHead);
+
+            int mouseX = Room.game.getMouse().getX();
+            int mouseY = Room.game.getMouse().getY();
+
+            if (mouseX == newX && mouseY == newY) {
+                Room.game.eatMouse();
+            } else {
+                sections.remove(sections.size() - 1);
+            }
+        }
+    }
 
     public int getX() {
         return sections.get(0).getX();
@@ -69,9 +88,11 @@ public class Snake {
     }
 
     public void checkBody(SnakeSection head) {
-        List<SnakeSection> body = new ArrayList<>(sections);
-        body.remove(0);
 
-        if (body.contains(head)) isAlive = false;
+        // impotant getSections() and not sections
+        if (getSections().contains(head)) {
+            isAlive = false;
+        }
     }
+
 }
