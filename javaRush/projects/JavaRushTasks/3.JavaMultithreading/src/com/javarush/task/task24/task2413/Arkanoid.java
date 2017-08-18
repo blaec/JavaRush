@@ -8,11 +8,16 @@ public class Arkanoid {
     private Ball ball;
     private Stand stand;
     private List<Brick> bricks;
+    public static Arkanoid game;
 
     public Arkanoid(int width, int height) {
         this.width = width;
         this.height = height;
     }
+
+    public void run() { }
+
+    public void move() { }
 
     public int getWidth() {
         return width;
