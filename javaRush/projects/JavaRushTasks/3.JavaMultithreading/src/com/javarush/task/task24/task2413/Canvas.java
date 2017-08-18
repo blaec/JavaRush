@@ -9,6 +9,8 @@ public class Canvas {
     public Canvas(int width, int height) {
         this.height = height;
         this.width = width;
+
+        // instead of this line can execute clear() method
         matrix = new char[height + 2][ width + 2];
     }
 
@@ -51,6 +53,19 @@ public class Canvas {
             for (int mx = 0; mx < matrix[my].length; mx++) {
                 setPoint(x + mx, y + my, c);
             }
+        }
+    }
+
+    public void clear() {
+        matrix = new char[height + 2][ width + 2];
+    }
+
+    public void print() {
+        for (int y = 0; y < matrix.length; y++) {
+            for (int x = 0; x < matrix[y].length; x++) {
+                System.out.print(matrix[y][x]);
+            }
+            System.out.println();
         }
     }
 }

@@ -25,7 +25,7 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="11">
+    <window id="12">
       <content type="file-editors">
         <state>
           <leaf>
@@ -49,9 +49,12 @@
       <file leaf-file-name="Canvas.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task24/task2413/Canvas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="578">
+              <caret line="67" column="31" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+              <folding>
+                <element signature="e#1420#1421#0" expanded="true" />
+                <element signature="e#1477#1478#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1332,9 +1335,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task24/task2413/Canvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="41" lean-forward="false" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="578">
+          <caret line="67" column="31" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+          <folding>
+            <element signature="e#1420#1421#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
