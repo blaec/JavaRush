@@ -3,7 +3,7 @@ package com.javarush.task.task24.task2413;
 public class Stand extends BaseObject{
     @Override
     public void draw(Canvas canvas) {
-        
+
     }
 
     @Override
