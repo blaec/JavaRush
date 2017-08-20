@@ -25,7 +25,7 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="2">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
@@ -46,51 +46,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/bean/User.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/ModelData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="136">
+              <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#216#217#0" expanded="true" />
-                <element signature="e#244#245#0" expanded="true" />
-                <element signature="e#290#291#0" expanded="true" />
-                <element signature="e#324#325#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/Model.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FakeModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/FakeModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#300#301#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#195#196#0" expanded="true" />
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+                <element signature="e#303#304#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,22 +68,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/dao/UserDao.java">
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/view/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="70" column="41" lean-forward="false" selection-start-line="70" selection-start-column="16" selection-end-line="70" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataSource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/dao/mock/DataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="47" column="41" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="41" />
-              <folding />
+            <state relative-caret-position="119">
+              <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,8 +86,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -188,8 +145,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task23/task2312/Room.java" />
-        <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task23/task2312/SnakeSection.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task23/task2312/Snake.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task23/task2301/Solution.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task23/task2302/Solution.java" />
@@ -239,6 +194,8 @@
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/ModelData.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/Model.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/FakeModel.java" />
+        <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/view/View.java" />
+        <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/controller/Controller.java" />
       </list>
     </option>
   </component>
@@ -1078,16 +1035,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task24/task2401/Условие.jrtc">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task24/task2406/Условие.jrtc">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task24/task2406/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -1450,19 +1397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/Условие.jrtc">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/ModelData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1477,6 +1411,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/FakeModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1485,6 +1427,34 @@
             <element signature="imports" expanded="true" />
             <element signature="e#300#301#0" expanded="true" />
             <element signature="e#332#333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/Условие.jrtc">
+      <provider selected="true" editor-type-id="EditorTypeId">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="53" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <folding>
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
           </folding>
         </state>
       </provider>
