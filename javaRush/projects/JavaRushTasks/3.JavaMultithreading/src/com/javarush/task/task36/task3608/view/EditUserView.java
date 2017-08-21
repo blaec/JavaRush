@@ -15,6 +15,10 @@ public class EditUserView implements View{
         controller.onShowAllDeletedUsers();
     }
 
+    public void fireEventUserDeleted(long id) {
+        controller.onUserDelete(id);
+    }
+
     @Override
     public void refresh(ModelData modelData) {
         System.out.println("User to be edited:");

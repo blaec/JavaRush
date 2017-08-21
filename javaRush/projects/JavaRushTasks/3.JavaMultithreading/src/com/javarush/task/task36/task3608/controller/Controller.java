@@ -35,4 +35,9 @@ public class Controller {
     public void setEditUserView(EditUserView editUserView) {
         this.editUserView = editUserView;
     }
+
+    public void onUserDelete(long id) {
+        model.deleteUserById(id);
+        usersView.refresh(model.getModelData());
+    }
 }
