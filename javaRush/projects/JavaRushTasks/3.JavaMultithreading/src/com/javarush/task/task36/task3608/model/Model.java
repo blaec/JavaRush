@@ -4,4 +4,5 @@ public interface Model {
     public ModelData getModelData();
     public void loadUsers();
     public void loadDeletedUsers();
+    public void loadUserById(long userId);
 }

@@ -15,7 +15,11 @@ public class UsersView implements View {
         controller.onShowAllDeletedUsers();
     }
 
-    @Override
+    public void fireEventOpenUserEditForm(long id) {
+        controller.onOpenUserEditForm(id);
+    }
+
+        @Override
     public void refresh(ModelData modelData) {
         String message = modelData.isDisplayDeletedUserList() ? "All deleted users:" : "All users:";
         System.out.println(message);
