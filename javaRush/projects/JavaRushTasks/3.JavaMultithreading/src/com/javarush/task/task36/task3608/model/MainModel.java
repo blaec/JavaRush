@@ -18,10 +18,11 @@ public class MainModel implements Model {
 
     @Override
     public void loadUsers() {
-//        List<User> users = new ArrayList<>();
-//        users.add(new User("A", 1, 1));
-//        users.add(new User("B", 2, 1));
-
         modelData.setUsers(userService.getUsersBetweenLevels(1, 100));
+    }
+
+    @Override
+    public void loadDeletedUsers() {
+        modelData.setUsers(userService.getAllDeletedUsers());
     }
 }
