@@ -4,7 +4,7 @@ import com.javarush.task.task36.task3608.bean.User;
 import com.javarush.task.task36.task3608.controller.Controller;
 import com.javarush.task.task36.task3608.model.ModelData;
 
-public class UsersView implements View {
+public class EditUserView implements View{
     private Controller controller = new Controller();
 
     public void fireEventShowAllUsers() {
@@ -17,11 +17,8 @@ public class UsersView implements View {
 
     @Override
     public void refresh(ModelData modelData) {
-        String message = modelData.isDisplayDeletedUserList() ? "All deleted users:" : "All users:";
-        System.out.println(message);
-        for (User user : modelData.getUsers()) {
-            System.out.println("\t" + user.toString());
-        }
+        System.out.println("User to be edited:");
+        System.out.println("\t" + modelData.getActiveUser().toString());
         System.out.println("===================================================");
     }
 
