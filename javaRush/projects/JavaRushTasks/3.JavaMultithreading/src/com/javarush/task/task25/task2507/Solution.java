@@ -19,6 +19,14 @@ public class Solution extends Thread {
 
     public void interrupt() {
         //implement logic here
+        try {
+            in.close();
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            super.interrupt();
+        }
     }
 
     public void run() {
@@ -38,6 +46,5 @@ public class Solution extends Thread {
     }
 
     public static void main(String[] args) throws IOException {
-        Solution solution = new Solution(new Socket());
     }
 }
