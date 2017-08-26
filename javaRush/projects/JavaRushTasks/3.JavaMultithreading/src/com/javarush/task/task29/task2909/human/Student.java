@@ -28,10 +28,6 @@ public class Student extends UniversityPerson {
         averageGrade += delta;
     }
 
-//    public void incAverageGradeBy02() {
-//        averageGrade += 0.2;
-//    }
-
     public void setAverageGrade(double averageGrade) {
         this.averageGrade = averageGrade;
     }
