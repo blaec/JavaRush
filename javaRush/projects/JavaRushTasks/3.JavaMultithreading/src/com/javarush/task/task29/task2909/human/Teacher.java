@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Teacher extends Human {
-//    private List<Human> children = new ArrayList<>();
     private int numberOfStudents;
     private String university;
 
@@ -14,14 +13,6 @@ public class Teacher extends Human {
         this.age = age;
         this.numberOfStudents = numberOfStudents;
     }
-
-//    public List<Human> getChildren() {
-//        return children;
-//    }
-//
-//    public void setChildren(List<Human> children) {
-//        this.children = children;
-//    }
 
     public void live() {
         teach();
