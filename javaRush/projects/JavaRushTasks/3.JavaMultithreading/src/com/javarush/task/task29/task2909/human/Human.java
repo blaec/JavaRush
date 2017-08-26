@@ -10,7 +10,6 @@ public class Human implements Alive{
     private int id;
     protected int age;
     protected String name;
-//    protected int course;
 
     protected int[] size;
 
@@ -35,6 +34,14 @@ public class Human implements Alive{
         this.age = age;
     }
 
+    public String getPosition() {
+        return "Человек";
+    }
+
+    public void printData() {
+        System.out.println(getPosition() + ": " + name);
+    }
+
     public void live() {}
 
     public int getAge() {
@@ -52,10 +59,6 @@ public class Human implements Alive{
     public void setName(String name) {
         this.name = name;
     }
-
-//    public int getCourse() {
-//        return course;
-//    }
 
     public int getId() {
         return id;
