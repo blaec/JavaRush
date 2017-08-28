@@ -25,68 +25,12 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="2">
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2601/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2602/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2603/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2604/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2605/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2606/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2607/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2608/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2609/Условие.jrtc">
+              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2612/Условие.jrtc">
                 <provider selected="true" editor-type-id="EditorTypeId">
                   <state />
                 </provider>
@@ -103,10 +47,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Solution.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2609/Solution.java">
+        <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2612/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+            <state relative-caret-position="119">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -184,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/view/UsersView.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/Model.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/FakeModel.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task36/task3608/model/MainModel.java" />
@@ -235,6 +178,7 @@
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2608/Solution.java" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2609/Условие.jrtc" />
         <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2609/Solution.java" />
+        <option value="$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2612/Solution.java" />
       </list>
     </option>
   </component>
@@ -330,7 +274,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="task" type="462c0819:PsiDirectoryNode" />
               <item name="task26" type="462c0819:PsiDirectoryNode" />
-              <item name="task2609" type="462c0819:PsiDirectoryNode" />
+              <item name="task2612" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1054,16 +998,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task25/task2513/Условие.jrtc">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task25/task2512/Условие.jrtc">
-      <provider selected="true" editor-type-id="EditorTypeId">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task25/task2511/Условие.jrtc">
       <provider selected="true" editor-type-id="EditorTypeId">
         <state />
@@ -1480,15 +1414,28 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2609/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Валидация">
       <provider selected="true" editor-type-id="EditorTypeId">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2609/Solution.java">
+    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2612/Условие.jrtc">
+      <provider selected="true" editor-type-id="EditorTypeId">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2612/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        <state relative-caret-position="119">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
