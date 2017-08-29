@@ -51,6 +51,16 @@ public class Server {
 
             return clientName;
         }
+
+        private void sendListOfUsers(Connection connection, String userName) throws IOException {
+            Iterator it = connectionMap.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry)it.next();
+                String clientName = (String) pair.getKey();
+                if (!clientName.equals(userName))
+                    connection.send(new Message(MessageType.USER_ADDED, clientName));
+            }
+        }
     }
 
     public static void sendBroadcastMessage(Message message) {
