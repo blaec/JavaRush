@@ -30,20 +30,6 @@
         <state>
           <leaf>
             <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2612/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2610/Условие.jrtc">
-                <provider selected="true" editor-type-id="EditorTypeId">
-                  <state />
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="Условие.jrtc" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task26/task2611/Условие.jrtc">
                 <provider selected="true" editor-type-id="EditorTypeId">
                   <state />
@@ -70,12 +56,10 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task30/task3008/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="465">
+              <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#859#860#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1438,12 +1422,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/3.JavaMultithreading/src/com/javarush/task/task30/task3008/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="465">
+          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#859#860#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
           </folding>
         </state>
       </provider>
