@@ -11,9 +11,9 @@ public class Message implements Serializable{
         data = null;
     }
 
-    public Message(MessageType type, String date) {
+    public Message(MessageType type, String data) {
         this.type = type;
-        this.data = date;
+        this.data = data;
     }
 
     public MessageType getType() {

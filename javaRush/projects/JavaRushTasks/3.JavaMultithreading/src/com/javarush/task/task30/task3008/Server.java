@@ -33,6 +33,24 @@ public class Server {
         public Handler(Socket socket) {
             this.socket = socket;
         }
+
+        private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
+            String clientName = null;
+            while (true) {
+                connection.send(new Message(MessageType.NAME_REQUEST));
+                Message answer = connection.receive();
+                clientName = answer.getData();
+                if (answer.getType().equals(MessageType.USER_NAME) &&
+                        !clientName.isEmpty() &&
+                        !connectionMap.containsKey(clientName))
+                    break;
+            }
+
+            connectionMap.put(clientName, connection);
+            connection.send(new Message(MessageType.NAME_ACCEPTED));
+
+            return clientName;
+        }
     }
 
     public static void sendBroadcastMessage(Message message) {
