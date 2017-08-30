@@ -54,15 +54,16 @@ public class Client {
 
         synchronized (this) {
             this.notify();
-            if (clientConnected)
+            if (clientConnected) {
                 ConsoleHelper.writeMessage("Соединение установлено. Для выхода наберите команду ‘exit’.");
-            else
+                while (clientConnected) {
+                    String message = ConsoleHelper.readString();
+                    if (message.equals("exit")) break;
+                    if (shouldSendTextFromConsole()) sendTextMessage(message);
+                }
+            } else
                 ConsoleHelper.writeMessage("Произошла ошибка во время работы клиента.");
-            while (clientConnected) {
-                String message = ConsoleHelper.readString();
-                if (message.equals("exit")) break;
-                if (shouldSendTextFromConsole()) sendTextMessage(message);
-            }
+
         }
 
     }
@@ -89,6 +90,45 @@ public class Client {
             Client.this.clientConnected = clientConnected;
             synchronized (Client.this) {
                 Client.this.notify();
+            }
+        }
+
+        protected void clientHandshake() throws IOException, ClassNotFoundException {
+
+            Message message;
+
+            while (!clientConnected) {
+                message = connection.receive();
+
+                if (message.getType() == MessageType.NAME_REQUEST) {
+                    String userName = getUserName();
+                    connection.send(new Message(MessageType.USER_NAME, userName));
+                }
+                else {
+                    if (message.getType() == MessageType.NAME_ACCEPTED) {
+                        notifyConnectionStatusChanged(true);
+                    } else
+                        throw new IOException("Unexpected MessageType");
+                }
+            }
+        }
+
+        protected void clientMainLoop() throws IOException, ClassNotFoundException {
+            boolean isLoop = true;
+            Message message;
+
+            while (isLoop) {
+                message = connection.receive();
+                if (message.getType() == MessageType.TEXT)
+                    processIncomingMessage(message.getData());
+                else if (message.getType() == MessageType.USER_ADDED)
+                    informAboutAddingNewUser(message.getData());
+                else if (message.getType() == MessageType.USER_REMOVED)
+                    informAboutDeletingNewUser(message.getData());
+                else {
+                    isLoop = false;
+                    throw new IOException("Unexpected MessageType");
+                }
             }
         }
     }
