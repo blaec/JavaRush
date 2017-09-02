@@ -11,6 +11,8 @@ public class Archiver {
 
         ZipFileManager zipFileManager = new ZipFileManager(Paths.get(bufferedReader.readLine()));
         zipFileManager.createZip(Paths.get(bufferedReader.readLine()));
+//        ZipFileManager zipFileManager = new ZipFileManager(Paths.get("C:\\CCC Images\\file.zip"));
+//        zipFileManager.createZip(Paths.get("C:\\CCC Images\\file.csv"));
 
         bufferedReader.close();
     }
