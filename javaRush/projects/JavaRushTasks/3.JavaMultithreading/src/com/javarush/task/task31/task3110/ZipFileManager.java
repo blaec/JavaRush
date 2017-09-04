@@ -3,11 +3,10 @@ package com.javarush.task.task31.task3110;
 import com.javarush.task.task31.task3110.exception.PathIsNotFoundException;
 import com.javarush.task.task31.task3110.exception.WrongZipFileException;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipEntry;
@@ -97,6 +96,57 @@ public class ZipFileManager {
         int len;
         while ((len = in.read(buffer)) > 0) {
             out.write(buffer, 0, len);
+        }
+    }
+
+    // https://www.mkyong.com/java/how-to-decompress-files-from-a-zip-file/
+    public void extractAll(Path outputFolder) throws Exception {
+
+        // Проверяем существует ли zip файл
+        if (!Files.isRegularFile(zipFile)) {
+            throw new WrongZipFileException();
+        }
+
+
+        try (ZipInputStream zipInputStream = new ZipInputStream(Files.newInputStream(zipFile))) {
+
+            // Проверяем, существует ли директория
+            // При необходимости создаем ее
+            if (Files.notExists(outputFolder))
+                Files.createDirectories(outputFolder);
+
+            ZipEntry zipEntry;
+//            byte[] buffer = new byte[1024];
+
+            while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+
+                // get full file name
+                String fileName = zipEntry.getName();
+//                File newFile = new File(outputFolder + File.separator + fileName);
+                Path fileFullName = outputFolder.resolve(fileName);
+
+                // add non-existing folders
+                Path parent = fileFullName.getParent();
+                if (Files.notExists(parent))
+                    Files.createDirectories(parent);
+//            new File(newFile.getParent()).mkdirs();
+
+//                FileOutputStream fos = new FileOutputStream(newFile);
+//
+//                int len;
+//                while ((len = zipInputStream.read(buffer)) > 0) {
+//                    fos.write(buffer, 0, len);
+//                }
+//
+//                fos.close();
+
+                try (OutputStream os = Files.newOutputStream(fileFullName)) {
+                    copyData(zipInputStream, os);
+                }
+            }
+
+//            zipInputStream.closeEntry();
+//            zipInputStream.close();
         }
     }
 }
