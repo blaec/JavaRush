@@ -23,6 +23,7 @@ public class Solution {
                 }
             });
         }
+
         executorService.shutdown();
         executorService.awaitTermination(5, TimeUnit.SECONDS);
 
