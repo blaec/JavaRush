@@ -5,7 +5,6 @@ import com.javarush.task.task32.task3209.listeners.TabbedPaneChangeListener;
 import com.javarush.task.task32.task3209.listeners.UndoListener;
 
 import javax.swing.*;
-import javax.swing.event.UndoableEditEvent;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
@@ -27,7 +26,7 @@ public class View extends JFrame implements ActionListener {
 
     public View() {
         try {
-            UIManager.setLookAndFeel("");
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
             ExceptionHandler.log(e);
         }
@@ -120,5 +119,9 @@ public class View extends JFrame implements ActionListener {
 
     public UndoListener getUndoListener() {
         return undoListener;
+    }
+
+    public boolean isHtmlTabSelected() {
+        return (tabbedPane.getSelectedIndex() == 0);
     }
 }
