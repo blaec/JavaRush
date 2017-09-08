@@ -8,6 +8,7 @@ import javax.swing.text.html.HTMLEditorKit;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
+import java.io.StringWriter;
 
 public class Controller {
     private View view;
@@ -55,10 +56,19 @@ public class Controller {
         StringReader reader = new StringReader(text);
         try {
             new HTMLEditorKit().read(reader, document, document.getLength());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (BadLocationException e) {
+        } catch (Exception e) {
             ExceptionHandler.log(e);
         }
+    }
+
+    public String getPlainText() {
+        StringWriter writer = new StringWriter();
+        try {
+            new HTMLEditorKit().write(writer, document, 0, document.getLength());
+        } catch (Exception e) {
+            ExceptionHandler.log(e);
+        }
+
+        return document.toString();
     }
 }
