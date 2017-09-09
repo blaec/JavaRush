@@ -6,4 +6,5 @@ public interface Logger {
     void setNext(Logger next);
 
     void info(String message);
+
 }

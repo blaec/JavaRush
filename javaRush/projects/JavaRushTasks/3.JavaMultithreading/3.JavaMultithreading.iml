@@ -19,5 +19,6 @@
     <orderEntry type="library" name="org.jsoup:jsoup:1.10.3" level="project" />
     <orderEntry type="library" name="javax.mail:mail:1.4.7" level="project" />
     <orderEntry type="module" module-name="2.JavaCore" />
+    <orderEntry type="module" module-name="4.JavaCollections" />
   </component>
 </module>
