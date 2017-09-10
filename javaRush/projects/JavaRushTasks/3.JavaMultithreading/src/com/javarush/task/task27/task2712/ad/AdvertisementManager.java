@@ -11,6 +11,15 @@ public class AdvertisementManager {
     }
 
     public void processVideos() {
-        ConsoleHelper.writeMessage("calling processVideos method");
+        // get list of available videos [max profit]
+        if (storage.list().isEmpty()) {
+            throw new NoVideoAvailableException();
+        }
+        /** Display all ads to display sorted by
+         * 1st key: video cost (descending) [50 - 50 cents)
+         * 2nd key: cost of 1 sec (ascending) [277 - 0.277 cent]
+         * like
+         * First Video is displaying... 50, 277
+         */
     }
 }
