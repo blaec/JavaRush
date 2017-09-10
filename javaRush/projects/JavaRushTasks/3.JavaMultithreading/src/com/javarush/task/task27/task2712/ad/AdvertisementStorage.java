@@ -15,11 +15,7 @@ public class AdvertisementStorage {
         return ourInstance;
     }
 
-    private AdvertisementStorage() {
-
-
-
-    }
+    private AdvertisementStorage() {}
 
     public List list() {
         return videos;
