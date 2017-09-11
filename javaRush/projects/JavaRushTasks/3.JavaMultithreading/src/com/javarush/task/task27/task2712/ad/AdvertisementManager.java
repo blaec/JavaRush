@@ -1,6 +1,10 @@
 package com.javarush.task.task27.task2712.ad;
 
 import com.javarush.task.task27.task2712.ConsoleHelper;
+import com.javarush.task.task27.task2712.kitchen.Order;
+import com.javarush.task.task27.task2712.statistic.StatisticManager;
+import com.javarush.task.task27.task2712.statistic.event.CookedOrderEventDataRow;
+import com.javarush.task.task27.task2712.statistic.event.VideoSelectedEventDataRow;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,18 +34,32 @@ public class AdvertisementManager {
             }
         });
 
-        int adsTime = timeSeconds;
+        // Calculate stats
+        List<Advertisement> displayAds = new ArrayList<>();
+        int adsTime = 0;
+        long adsCost = 0;
         for (Advertisement ad : ads) {
-            if (adsTime < ad.getDuration()) {
+            if (timeSeconds < ad.getDuration()) {
                 continue;
             }
+
+            displayAds.add(ad);
+            adsTime += ad.getDuration();
+            adsCost += ad.getAmountPerOneDisplaying();
+        }
+
+        // register video selected event
+        VideoSelectedEventDataRow videoSelected = new VideoSelectedEventDataRow(ads, adsCost, adsTime);
+        StatisticManager.getInstance().register(videoSelected);
+
+        // display video
+        for (Advertisement ad : displayAds) {
 
             long secCost = 1000 * ad.getAmountPerOneDisplaying() / ad.getDuration();
             ConsoleHelper.writeMessage(String.format("%s is displaying... %d, %d", ad.getName(),
                                                                                    ad.getAmountPerOneDisplaying(),
                                                                                    secCost));
 
-            adsTime -= ad.getDuration();
             ad.revalidate();
         }
 

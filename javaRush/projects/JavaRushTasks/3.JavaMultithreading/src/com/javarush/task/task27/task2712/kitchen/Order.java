@@ -33,4 +33,12 @@ public class Order {
     public String toString() {
         return dishes.isEmpty() ? "" : "Your order: " + dishes + " of " + tablet + ", cooking time " + getTotalCookingTime() + "min";
     }
+
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
+    public Tablet getTablet() {
+        return tablet;
+    }
 }

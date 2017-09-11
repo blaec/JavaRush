@@ -18,7 +18,9 @@ public class StatisticManager {
 
     private StatisticManager() {}
 
-    public void register(EventDataRow data) {}
+    public void register(EventDataRow data) {
+        statisticStorage.put(data);
+    }
 
 
     private class StatisticStorage {
@@ -29,6 +31,13 @@ public class StatisticManager {
             for (EventType eventType : EventType.values()) {
                 storage.put(eventType, new ArrayList<>());
             }
+        }
+
+        private void put(EventDataRow data) {
+            EventType key = data.getType();
+            List<EventDataRow> value = storage.get(key);
+            value.add(data);
+            storage.put(key, value);
         }
     }
 }
