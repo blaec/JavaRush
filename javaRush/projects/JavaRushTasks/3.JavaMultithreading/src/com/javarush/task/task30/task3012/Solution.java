@@ -56,5 +56,32 @@ public class Solution {
         }
 
         System.out.println(output.toString());
+
+
+        /** Another solution
+         *
+
+         String s = number + " =";
+         int s1 = 1;
+
+         while (number > 0) {
+             int q = number / 3;
+             int r = number % 3;
+
+             if (r == 1) {
+                s += " + " + s1;
+             }
+
+             if (r == 2) {
+                s += " - " + s1;
+                q++;
+             }
+             number = q;
+             s1 *= 3;
+         }
+
+         System.out.println(s);
+
+         */
     }
 }
