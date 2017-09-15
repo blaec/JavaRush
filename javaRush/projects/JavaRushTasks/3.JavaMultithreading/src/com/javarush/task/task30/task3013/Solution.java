@@ -2,6 +2,7 @@ package com.javarush.task.task30.task3013;
 
 /* 
 Набираем код
+https://habrahabr.ru/post/93172/
 */
 
 public class Solution {
