@@ -17,8 +17,10 @@ public class Model {
     private void addTile() {
         List<Tile> emptyTiles = getEmptyTiles();
 
-        Tile rndTile = emptyTiles.get((int) (Math.random()*emptyTiles.size()));
-        rndTile.value = Math.random() < 0.9 ? 2 : 4;
+        if (emptyTiles != null && emptyTiles.size() > 0) {
+            Tile rndTile = emptyTiles.get((int) (Math.random() * emptyTiles.size()));
+            rndTile.value = Math.random() < 0.9 ? 2 : 4;
+        }
     }
 
     private List<Tile> getEmptyTiles() {
@@ -44,8 +46,9 @@ public class Model {
         addTile();
     }
 
-    private void compressTiles(Tile[] tiles) {
+    private boolean compressTiles(Tile[] tiles) {
         int shifts = 0;
+        boolean isCompressed = false;
 
         // no need to check last tile (it cannot be compressed)
         for (int i = 0; i < tiles.length - 1; i++) {
@@ -54,6 +57,9 @@ public class Model {
                 // move all tiles to the right
                 for (int j = i; j < tiles.length - 1; j++) {
                     tiles[j].value = tiles[j +1].value;
+
+                    // Try to change flag to true only when it's already false and non-empty tile is shifted
+                    if (!isCompressed) isCompressed = !tiles[i].isEmpty();
                 }
 
                 // move empty tile to the end
@@ -63,12 +69,15 @@ public class Model {
                 shifts++;
             }
 
-            // Exit point from eternal loop {0,0,0,0}
+            // Exit point from eternal loop {0,0,0,0}, {0,0,4,0}...
             if (shifts > tiles.length) break;
         }
+
+        return isCompressed;
     }
 
-    private void mergeTiles(Tile[] tiles) {
+    private boolean mergeTiles(Tile[] tiles) {
+        boolean isMerged = false;
 
         // no need to check last tile (it cannot be merged)
         for (int i = 0; i < tiles.length - 1; i++) {
@@ -86,7 +95,21 @@ public class Model {
 
                 // last tile now is empty
                 tiles[tiles.length - 1].value = 0;
+                isMerged = true;
             }
         }
+
+        return isMerged;
+    }
+
+    public void left() {
+        boolean isChanged = false;
+
+        for (int i = 0; i < gameTiles.length; i++) {
+            if (compressTiles(gameTiles[i]) | mergeTiles(gameTiles[i])) isChanged = true;
+        }
+
+        // Flag needed to add tile only once if at least one row was changed
+        if (isChanged) addTile();
     }
 }
