@@ -54,7 +54,7 @@ public class Model {
         for (int i = 0; i < tiles.length - 1; i++) {
             if (tiles[i].isEmpty()) {
 
-                // move all tiles to the right
+                // move all tiles to the left
                 for (int j = i; j < tiles.length - 1; j++) {
                     tiles[j].value = tiles[j +1].value;
 
@@ -88,7 +88,7 @@ public class Model {
                 score += tiles[i].value;
                 maxTile = maxTile > tiles[i].value ? maxTile : tiles[i].value;
 
-                // move all tiles to the right
+                // move all tiles to the left
                 for (int j = i + 1; j < tiles.length - 1; j++) {
                     tiles[j].value = tiles[j +1].value;
                 }
@@ -111,5 +111,46 @@ public class Model {
 
         // Flag needed to add tile only once if at least one row was changed
         if (isChanged) addTile();
+    }
+
+    public void right() {
+        for (int i = 0; i < 2; i++) {
+            gameTiles = rotate();
+        }
+        left();
+        for (int i = 0; i < 2; i++) {
+            gameTiles = rotate();
+        }
+    }
+
+    public void down() {
+        for (int i = 0; i < 3; i++) {
+            gameTiles = rotate();
+        }
+        left();
+        gameTiles = rotate();
+    }
+
+    public void up() {
+        gameTiles = rotate();
+        left();
+        for (int i = 0; i < 3; i++) {
+            gameTiles = rotate();
+        }
+    }
+
+    // rotate counter-clockwise
+    private Tile[][] rotate() {
+        int w = gameTiles.length;
+        int h = gameTiles[0].length;
+        Tile[][] rotated = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+
+        for (int i = 0; i < h; ++i) {
+            for (int j = 0; j < w; ++j) {
+                rotated[i][j] = gameTiles[j][h - i - 1];
+            }
+        }
+
+        return rotated;
     }
 }
