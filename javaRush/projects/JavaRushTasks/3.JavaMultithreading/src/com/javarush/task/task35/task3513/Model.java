@@ -110,15 +110,19 @@ public class Model {
     public void left() {
         boolean isChanged = false;
 
+        if (isSaveNeeded) saveState(gameTiles);
+
         for (int i = 0; i < gameTiles.length; i++) {
             if (compressTiles(gameTiles[i]) | mergeTiles(gameTiles[i])) isChanged = true;
         }
 
         // Flag needed to add tile only once if at least one row was changed
         if (isChanged) addTile();
+        isSaveNeeded = true;
     }
 
     public void right() {
+        saveState(gameTiles);
         for (int i = 0; i < 2; i++) {
             gameTiles = rotate();
         }
@@ -129,6 +133,7 @@ public class Model {
     }
 
     public void down() {
+        saveState(gameTiles);
         for (int i = 0; i < 3; i++) {
             gameTiles = rotate();
         }
@@ -137,6 +142,7 @@ public class Model {
     }
 
     public void up() {
+        saveState(gameTiles);
         gameTiles = rotate();
         left();
         for (int i = 0; i < 3; i++) {
