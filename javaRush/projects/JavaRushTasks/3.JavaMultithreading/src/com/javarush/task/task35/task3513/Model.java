@@ -2,6 +2,7 @@ package com.javarush.task.task35.task3513;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 // Contain game logic and save game field
 public class Model {
@@ -9,6 +10,10 @@ public class Model {
     private Tile[][] gameTiles = new Tile[FIELD_WIDTH][FIELD_WIDTH];
     public int score = 0;
     public int maxTile = 2;
+
+    private Stack<Tile[][]> previousStates = new Stack<>();
+    private Stack<Integer> previousScores = new Stack<>();
+    private boolean isSaveNeeded = true;
 
     public Model() {
         resetGameTiles();
@@ -180,5 +185,28 @@ public class Model {
 
     public Tile[][] getGameTiles() {
         return gameTiles;
+    }
+
+    private void saveState(Tile[][] state) {
+
+        // Create instances of fields to save
+        Tile[][] gameToSave = new Tile[FIELD_WIDTH][FIELD_WIDTH];
+        for (int i = 0; i < state.length; i++) {
+            for (int j = 0; j < state[0].length; j++) {
+                gameToSave[i][j] = new Tile(state[i][j].value);
+            }
+        }
+        int scoreToSave = score;
+
+        previousStates.push(gameToSave);
+        previousScores.push(scoreToSave);
+        isSaveNeeded = false;
+    }
+
+    public void rollback() {
+        if (!previousStates.isEmpty() && !previousScores.isEmpty()) {
+            gameTiles = previousStates.pop();
+            score = previousScores.pop();
+        }
     }
 }
