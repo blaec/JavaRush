@@ -47,4 +47,8 @@ public class Controller extends KeyAdapter {
 
         super.keyPressed(e);
     }
+
+    public View getView() {
+        return view;
+    }
 }
