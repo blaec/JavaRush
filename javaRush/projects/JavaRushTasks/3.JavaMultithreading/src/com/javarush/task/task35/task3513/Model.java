@@ -153,4 +153,32 @@ public class Model {
 
         return rotated;
     }
+
+    public boolean canMove() {
+        boolean output = false;
+
+        // if can compress
+        if (getEmptyTiles().size() > 0)
+            output = true;
+
+        // if can merge horizontally or vertically
+        else {
+            for (int i = 0; i < gameTiles.length; i++) {
+                for (int j = 0; j < gameTiles[0].length; j++) {
+                    if ((i < gameTiles.length - 1 && gameTiles[i][j].value == gameTiles[i + 1][j].value) |
+                            (j < gameTiles[0].length - 1 && gameTiles[i][j].value == gameTiles[i][j + 1].value)) {
+                        output = true;
+                        break;
+                    }
+                }
+                if (output) break;
+            }
+        }
+
+        return output;
+    }
+
+    public Tile[][] getGameTiles() {
+        return gameTiles;
+    }
 }
