@@ -28,18 +28,18 @@ public class Solution {
         convertToXml(writer, dog);
         System.out.println(writer.toString());
         /* expected output
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<cat>
-    <name>Murka</name>
-    <age>5</age>
-    <weight>3</weight>
-</cat>
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<dog>
-    <name>Killer</name>
-    <age>8</age>
-    <owner>Bill Jeferson</owner>
-</dog>
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <cat>
+                <name>Murka</name>
+                <age>5</age>
+                <weight>3</weight>
+            </cat>
+            <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+            <dog>
+                <name>Killer</name>
+                <age>8</age>
+                <owner>Bill Jeferson</owner>
+            </dog>
         */
     }
 
