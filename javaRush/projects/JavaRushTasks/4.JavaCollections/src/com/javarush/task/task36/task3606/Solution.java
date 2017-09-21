@@ -1,12 +1,15 @@
 package com.javarush.task.task36.task3606;
 
+
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
+/*
 Осваиваем ClassLoader и Reflection
 */
 public class Solution {
@@ -26,10 +29,54 @@ public class Solution {
     }
 
     public void scanFileSystem() throws ClassNotFoundException {
+
+        // Local fix for Google Drive, name contains Google%20Drive, must be replaced to space
+        String fixedPackageName = (packageName.replaceAll("%20"," "));
+
+        File[] files = new File(fixedPackageName).listFiles();
+        ClassLoaderFromPath classLoader = new ClassLoaderFromPath();
+
+        for (File file : files) {
+
+            Class clazz = classLoader.load(file.toPath()); //Loading class from path
+            if (clazz != null) {
+                hiddenClasses.add(clazz);
+            }
+        }
     }
 
     public HiddenClass getHiddenClassObjectByKey(String key) {
+        for (Class<?> hiddenClass : hiddenClasses) {
+            if (hiddenClass.getName().toLowerCase().contains(key.toLowerCase())) {
+                try {
+                    Constructor[] constructors = hiddenClass.getDeclaredConstructors();
+                    for (Constructor constructor : constructors) {
+                        if (constructor.getParameterTypes().length == 0) {
+                            constructor.setAccessible(true);
+                            return (HiddenClass) constructor.newInstance(null);
+                        }
+                    }
+                } catch (Exception e) {
+                    return null;
+                }
+            }
+        }
         return null;
+    }
+
+    public static class ClassLoaderFromPath extends ClassLoader {
+        public Class<?> load(Path path) {
+            try {
+                if (path.getFileName().toString().lastIndexOf(".class") == -1)
+                    return null;
+
+                byte[] b = Files.readAllBytes(path);
+                return defineClass(null, b, 0, b.length); //here main magic
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 }
 

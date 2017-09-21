@@ -18,16 +18,13 @@ public class Solution {
         System.out.println(allAnimals);
     }
 
-    /**
-     * Accepted but not working
-     * new File(pathToAnimals).listFiles() - returns empty array (pathToAnimals - wrong path)
-     *
-     * if (file.isFile() && file.getName().endsWith(".class")) - package's missing compiled classes, all with ext. .java
-     */
     public static Set<? extends Animal> getAllAnimals(String pathToAnimals) {
         Set<Animal> set = new HashSet<>();
 
-        File[] list = new File(pathToAnimals).listFiles();
+        // Local fix for Google Drive, name contains Google%20Drive, must be replaced to space
+        String fixedPackageName = (pathToAnimals.replaceAll("%20"," "));
+
+        File[] list = new File(fixedPackageName).listFiles();
         for (File file : list) {
             if (file.isFile() && file.getName().endsWith(".class")) {
 
