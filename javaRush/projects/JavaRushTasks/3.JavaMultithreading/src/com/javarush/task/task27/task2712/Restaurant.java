@@ -43,4 +43,3 @@ public class Restaurant {
         directorTablet.printArchivedVideoSet();
     }
 }
-
