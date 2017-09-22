@@ -14,7 +14,7 @@ public class Advertisement {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        amountPerOneDisplaying = initialAmount / hits;
+        this.amountPerOneDisplaying = initialAmount / hits;
     }
 
     public String getName() {
@@ -30,10 +30,7 @@ public class Advertisement {
     }
 
     public void revalidate() {
-        if (hits == 0) {
-            throw new UnsupportedOperationException();
-        }
+        if (hits <= 0) throw new NoVideoAvailableException();
         hits--;
     }
-
 }

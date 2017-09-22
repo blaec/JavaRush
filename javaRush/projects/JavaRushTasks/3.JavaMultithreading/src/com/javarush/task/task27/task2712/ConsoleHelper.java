@@ -6,37 +6,44 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ConsoleHelper {
-    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    /**
+     * Closes the stream and releases any system resources associated with it.
+     * Once the stream has been closed, further read(), ready(), mark(), reset(),
+     * or skip() invocations will throw an IOException.
+     * Closing a previously closed stream has no effect.
+     */
+    private static final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void writeMessage(String message) {
         System.out.println(message);
     }
+
     public static String readString() throws IOException {
-        return reader.readLine();
+        String s = "null";
+        try {
+            s = br.readLine();
+        } catch (IOException e) {
+            throw e;
+        }
+        return s;
     }
 
     public static List<Dish> getAllDishesForOrder() throws IOException {
-        List<Dish> orderList = new ArrayList<>();
-        Map<String, Dish> menu = new HashMap<>();
-
-        writeMessage(Dish.allDishesToString());
-
-        for (Dish dish : Dish.values()) {
-            menu.put(dish.toString(), dish);
-        }
-
-        String dish;
-        while (!(dish = reader.readLine()).equals("exit")) {
-            if (menu.containsKey(dish)) {
-                orderList.add(menu.get(dish));
+        List<Dish> dishes = new ArrayList<>();
+        writeMessage("Please, enter the dish name (" + Dish.allDishesToString() + ") OR type 'exit' to complete the order");
+        while (true) {
+            String dish = readString().trim();
+            if (dish.equalsIgnoreCase("exit"))
+                break;
+            try {
+                dishes.add(Dish.valueOf(dish));
+            } catch (IllegalArgumentException e) {
+                writeMessage("Sorry, we don't have that dish");
             }
         }
-
-        return orderList;
+        return dishes;
     }
 }
