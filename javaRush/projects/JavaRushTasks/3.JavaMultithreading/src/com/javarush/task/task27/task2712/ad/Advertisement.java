@@ -33,4 +33,5 @@ public class Advertisement {
         if (hits <= 0) throw new NoVideoAvailableException();
         hits--;
     }
+
 }
